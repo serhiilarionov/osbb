@@ -12,9 +12,10 @@ class AppealController extends Controller
         return Appeal::all();
     }
 
-    public function takeInWork(Request $request, Appeal $appeal)
+    public function takeInWork(Appeal $appeal)
     {
         $appeal->in_work = true;
+        
         return response()->json($appeal, 201);
     }
     

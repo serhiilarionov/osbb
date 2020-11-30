@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Appeal', 'client_id');
     }
+
+    public function appealsCount()
+    {
+        return $this->hasMany('App\Models\Appeal', 'client_id')->count();
+    }
 }
